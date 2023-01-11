@@ -6,6 +6,6 @@ async function addSticky() {
   await miro.board.viewport.zoomTo(stickyNote);
 }
 
-addSticky();
+// addSticky();
 
 export {};

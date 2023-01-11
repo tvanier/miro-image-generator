@@ -8,6 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "lit": "2.6.0",
     "mirotone": "4.2.0"
   },
   "devDependencies": {

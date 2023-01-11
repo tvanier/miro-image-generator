@@ -24,7 +24,9 @@
     ],
     "allowJs": true,
     "incremental": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false
   },
   "include": [
     "src",
