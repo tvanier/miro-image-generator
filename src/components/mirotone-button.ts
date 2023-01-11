@@ -34,12 +34,13 @@ export class MirotoneButton extends LitElement {
       button: true,
       [`button-${this.variant}`]: true,
       'button-small': this.size === 'small',
-      'button-disabled': this.disabled,
       'button-loading': this.loading
     };
 
     return html`
-      <button class=${classMap(classes)} type="button">
+      <button class=${classMap(classes)} type="button"
+        ?disabled=${this.disabled}
+      >
         ${this.iconLeft ? html`<span class=${`icon-${this.iconLeft}`}></span>` : ''}
         <slot></slot>
         ${this.iconRight ? html`<span class=${`icon-${this.iconRight}`}></span>` : ''}

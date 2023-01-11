@@ -19,6 +19,9 @@ export class MirotoneInput extends LitElement {
     `
   ];
 
+  @property({ type: Boolean })
+  autofocus = false
+
   @property({ type: String })
   label = '';
 
@@ -46,6 +49,12 @@ export class MirotoneInput extends LitElement {
   @property({ type: String })
   helperText = '';
 
+  @property({ type: Function })
+  onInput: ((value: string) => void) | null = null
+
+  @property({ type: String })
+  value = ''
+
   render() {
     const formGroupClass = {
       'form-group': true,
@@ -65,8 +74,11 @@ export class MirotoneInput extends LitElement {
         <label>${this.label}
           <input class="${classMap(inputClass)}"
             type="${this.type}"
+            ?autofocus=${this.autofocus}
+            .value=${this.value}
             placeholder=${this.placeholder}
-            ?disabled=${this.disabled} ?readonly=${this.readonly} />
+            ?disabled=${this.disabled} ?readonly=${this.readonly}
+          />
         </label>
         ${this.helperText ? html`<span class="status-text">${this.helperText}</span>` : ''}
         ${this.statusText ? html`<div class="status-text">${this.statusText}</div>` : ''}
