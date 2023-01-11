@@ -7,3 +7,5 @@ async function addSticky() {
 }
 
 addSticky();
+
+export {};
