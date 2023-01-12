@@ -56,11 +56,14 @@ export class ImageGenerator extends LitElement {
       this.error = '';
       this.addingToBoard = true;
 
+      const viewport = await miro.board.viewport.get();
+
       await miro.board.createImage({
         title: this.imageDescription,
         url: this.imageUrl,
+        x: (viewport.x + viewport.width) / 2,
+        y: (viewport.y + viewport.height) / 2,
         width: 256,
-        height: 256
       });
     } catch (error) {
       this.error = String(error);
@@ -74,6 +77,7 @@ export class ImageGenerator extends LitElement {
       <img src=${this.imageUrl} />
 
       <mirotone-button size="small"
+        iconRight="arrow-shape"
         ?loading=${this.addingToBoard}
         ?disabled=${this.addingToBoard}
         @click=${this.addImageToBoard}
@@ -88,7 +92,7 @@ export class ImageGenerator extends LitElement {
       <mirotone-input size="small"
         label="Enter an image description"
         autofocus
-        @input=${(evt: Event) => this.imageDescription = evt.originalTarget?.value ?? ''}
+        @input=${(evt: Event) => this.imageDescription = (evt as any).originalTarget?.value ?? ''}
         ?readonly=${this.generating}
       >
       </mirotone-input>
