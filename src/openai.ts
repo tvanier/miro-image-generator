@@ -5,6 +5,12 @@ const configuration = new Configuration({
   basePath: import.meta.env.PROD ? '/openai-api' : undefined
 });
 
+if (import.meta.env.PROD) {
+  // remove "Bearer undefined" added here
+  // https://github.com/openai/openai-node/blob/master/configuration.ts#L102
+  delete configuration.baseOptions?.headers?.Authorization;
+}
+
 const openai = new OpenAIApi(configuration);
 
 export const generateImage = async (request: CreateImageRequest) =>
