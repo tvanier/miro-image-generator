@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import dns from 'dns';
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/server-options.html#server-host
 dns.setDefaultResultOrder('verbatim');
@@ -10,7 +10,7 @@ dns.setDefaultResultOrder('verbatim');
 const allHtmlEntries = fs
   .readdirSync('.')
   .filter((file) => path.extname(file) === '.html')
-  .reduce((acc, file) => {
+  .reduce((acc: Record<string, string>, file) => {
     acc[path.basename(file, '.html')] = path.resolve(__dirname, file);
 
     return acc;
