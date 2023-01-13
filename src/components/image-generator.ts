@@ -1,5 +1,6 @@
 import { css, LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
+import { property } from 'lit/decorators/property.js';
 import { state } from 'lit/decorators/state.js';
 import { generateImage } from '../openai.js';
 import './mirotone-button.js'
@@ -14,8 +15,8 @@ export class ImageGenerator extends LitElement {
     }
   `
 
-  @state()
-  protected imageDescription = ''
+  @property()
+  imageDescription = ''
 
   @state()
   generating = false
@@ -92,6 +93,7 @@ export class ImageGenerator extends LitElement {
       <mirotone-input size="small"
         label="Enter an image description"
         autofocus
+        .value=${this.imageDescription}
         @input=${(evt: Event) => this.imageDescription = (evt as any).originalTarget?.value ?? ''}
         ?readonly=${this.generating}
       >
