@@ -3,8 +3,8 @@ import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
 import { state } from 'lit/decorators/state.js';
 import { generateImage } from '../openai.js';
-import './mirotone-button.js'
-import './mirotone-input.js'
+import './mirotone/mirotone-button.js'
+import './mirotone/mirotone-input.js'
 
 @customElement('image-generator')
 export class ImageGenerator extends LitElement {
@@ -62,8 +62,8 @@ export class ImageGenerator extends LitElement {
       await miro.board.createImage({
         title: this.imageDescription,
         url: this.imageUrl,
-        x: (viewport.x + viewport.width) / 2,
-        y: (viewport.y + viewport.height) / 2,
+        x: viewport.x + (viewport.width / 2),
+        y: viewport.y + (viewport.height / 2),
         width: 256,
       });
     } catch (error) {
@@ -90,7 +90,8 @@ export class ImageGenerator extends LitElement {
 
   render() {
     return html`
-      <mirotone-input size="small"
+      <mirotone-input
+        size="small"
         label="Enter an image description"
         autofocus
         .value=${this.imageDescription}

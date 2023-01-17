@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/assets/style.css" />
+    <script src="https://miro.com/app/static/sdk/v2/miro.js"></script>
+    <title>Image Generator</title>
+
+    <script type="module" src="src/components/mirotone/index.ts"></script>
+  </head>
+  <body>
+    <h2>Input</h2>
+    <mirotone-input
+      label="Please enter something"
+      placeholder="This is the placeholder"
+    >
+    </mirotone-input>
+
+    <mirotone-input
+      size="small"
+      label="Please enter something"
+      placeholder="This is the placeholder"
+    >
+    </mirotone-input>
+
+    <h2>Button</h2>
+    <mirotone-button>Click Me!</mirotone-button>
+    <mirotone-button size="small">Small</mirotone-button>
+
+    <mirotone-select label="Please choose an option">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+      <option selected value="3">Option three</option>
+      <option value="4">Option four</option>
+    </mirotone-select>
+
+    <mirotone-select label="Please choose an option" size="small">
+      <option value="1">Option one</option>
+      <option value="2">Option two</option>
+      <option value="3">Option three</option>
+      <option value="4">Option four</option>
+    </mirotone-select>
+
+    <mirotone-textarea rows="2"></mirotone-textarea>
+
+    <div class="grid wrapper">
+      <div class="cs1 ce12">
+        <image-generator id="image-generator"></image-generator>
+      </div>
+    </div>
+
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>

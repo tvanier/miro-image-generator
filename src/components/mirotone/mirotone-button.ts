@@ -2,10 +2,10 @@ import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { mirotoneStyles } from './styles.js'; // button classes only?
+import { mirotoneStyles } from '../styles.js'; // button classes only?
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'danger'
-export type ButtonSize = 'normal' | 'small'
+export type ButtonSize = '' | 'small'
 
 @customElement('mirotone-button')
 export class MirotoneButton extends LitElement {
@@ -15,7 +15,7 @@ export class MirotoneButton extends LitElement {
   variant: ButtonVariant = 'primary';
 
   @property({ type: String })
-  size: ButtonSize = 'normal';
+  size: ButtonSize = '';
 
   @property({ type: Boolean })
   disabled = false;
@@ -31,9 +31,9 @@ export class MirotoneButton extends LitElement {
 
   render() {
     const classes = {
-      button: true,
+      'button': true,
       [`button-${this.variant}`]: true,
-      'button-small': this.size === 'small',
+      [`button-${this.size}`]: this.size,
       'button-loading': this.loading
     };
 
