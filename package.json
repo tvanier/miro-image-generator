@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "lit": "2.7.2",
-    "mirotone": "4.3.0",
+    "mirotone": "5.0.0",
     "openai": "3.2.1"
   },
   "devDependencies": {
