@@ -8,7 +8,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "lit": "2.7.3",
+    "lit": "2.7.4",
     "mirotone": "5.1.0",
     "openai": "3.2.1"
   },
