@@ -16,6 +16,6 @@
     "@mirohq/websdk-types": "2.9.8",
     "@types/node": "18.18.4",
     "typescript": "5.2.2",
-    "vite": "4.4.9"
+    "vite": "4.4.11"
   }
 }
