@@ -10,7 +10,7 @@
   "dependencies": {
     "lit": "3.1.0",
     "mirotone": "5.1.0",
-    "openai": "4.20.1"
+    "openai": "4.23.0"
   },
   "devDependencies": {
     "@mirohq/websdk-types": "2.11.0",
