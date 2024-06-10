@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@mirohq/websdk-types": "2.15.1",
-    "@types/node": "18.19.33",
+    "@types/node": "18.19.34",
     "typescript": "5.4.5",
     "vite": "5.2.12"
   }
