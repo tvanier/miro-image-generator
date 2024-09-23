@@ -13,7 +13,7 @@
     "openai": "4.63.0"
   },
   "devDependencies": {
-    "@mirohq/websdk-types": "2.15.1",
+    "@mirohq/websdk-types": "2.16.1",
     "@types/node": "22.6.0",
     "typescript": "5.6.2",
     "vite": "5.4.7"
